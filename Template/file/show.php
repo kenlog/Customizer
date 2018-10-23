@@ -114,6 +114,13 @@
         <?= $this->form->select('useCustomColors', array('yes', 'no'), $values, $errors) ?>
     </fieldset>
         
+        
+    <div class="form-actions">
+        <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
+    </div>
+        
+</form>
+        
     <?php if ($this->task->configModel->get('useCustomColors', 'no') == 'yes') : ?>
         
         <form class="url-links" method="post" action="<?= $this->url->href('CustomizerConfigController', 'save', array('plugin' => 'customizer', 'redirect' => 'application')) ?>" autocomplete="off">
