@@ -19,9 +19,19 @@ class Plugin extends Base
 	    } 
 	    
 	$customizer['backURL'] = $this->configModel->get('background_url', '');
-	$customizer['backColor'] = $this->configModel->get('loginbackground_color', '#ffffff');
 	$customizer['logoSize'] = $this->configModel->get('loginlogo_size', '50');
 	$customizer['loginpanel_color'] = $this->configModel->get('loginpanel_color', '#ffffff');
+	    
+	    if ($this->configModel->get('useCustomColors', 'yes') == 'yes') {
+		    $customizer['backColor'] = $this->configModel->get('loginbackground_color', '');
+		    $customizer['backColor_b'] = $this->configModel->get('loginpanel_color', '');
+		    $customizer['mainFontColor'] = $this->configModel->get('loginpanel_color', '');
+		    $customizer['alert'] = $this->configModel->get('loginpanel_color', '');
+		    $customizer['fontColor'] = $this->configModel->get('loginpanel_color', '');
+		    $customizer['headerFontColor'] = $this->configModel->get('loginpanel_color', '');
+		    $customizer['color_a'] = $this->configModel->get('loginpanel_color', '');
+		    $this->template->hook->attach('template:layout:head', 'customizer:layout/css');
+	    }
         
         $this->template->hook->attach('template:config:sidebar', 'customizer:config/sidebar');
         $this->template->setTemplateOverride('header/title', 'customizer:header/title');
