@@ -110,11 +110,38 @@
         <?= $this->form->label(t('Login Logo Size'), 'loginlogo_size') ?>
         <?= $this->form->text('loginlogo_size', $values, $errors, array('placeholder="50"')) ?>
         <p class="form-help background-img-link-desc"><?= e('Example: <code>50</code> (Default is 50px in height)') ?></p>
+        <?= $this->form->label(t('Use Custom Colors'), 'useCustomColors') ?>
+        <?= $this->form->select('useCustomColors', array('yes', 'no'), $values, $errors) ?>
+    </fieldset>
+        
+    <?php if ($this->configModel->get('useCustomColors', 'no') == 'yes') : ?>
+        
+        <form class="url-links" method="post" action="<?= $this->url->href('CustomizerConfigController', 'save', array('plugin' => 'customizer', 'redirect' => 'application')) ?>" autocomplete="off">
+    <?= $this->form->csrf() ?>
+    <fieldset class="login-link-block">
+    	<div class="panel-heading">
+    		<h3 class="panel-title links-title"><?= t('Links & Settings') ?></h3>
+    	</div>
+        <?= $this->form->label(t('Main Background Color'), 'loginbackground_color') ?>
+        <input type="color" name="loginbackground_color" value="<?= $this->task->configModel->get('loginbackground_color','#ffffff') ?>">
+        <?= $this->form->label(t('Secondary Page Background Color'), 'backColor_b') ?>
+        <input type="color" name="backColor_b" value="<?= $this->task->configModel->get('backColor_b','') ?>">
+        <?= $this->form->label(t('Tertiary Background Color'), 'color_a') ?>
+        <input type="color" name="color_a" value="<?= $this->task->configModel->get('color_a','') ?>">
+        <?= $this->form->label(t('Header Font Color'), 'headerFontColor') ?>
+        <input type="color" name="headerFontColor" value="<?= $this->task->configModel->get('headerFontColor','') ?>">
+        <?= $this->form->label(t('Font Color A'), 'mainFontColor') ?>
+        <input type="color" name="mainFontColor" value="<?= $this->task->configModel->get('mainFontColor','') ?>">
+        <?= $this->form->label(t('Font Color B'), 'fontColor') ?>
+        <input type="color" name="fontColor" value="<?= $this->task->configModel->get('fontColor','') ?>">
+        <?= $this->form->label(t('Notice Color'), 'alert') ?>
+        <input type="color" name="alert" value="<?= $this->task->configModel->get('alert','') ?>">
     </fieldset>
 
     <div class="form-actions">
         <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
     </div>
-</form>     
+</form>  
+    <?php endif ?>
 <br>
 </section>
