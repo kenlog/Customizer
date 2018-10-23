@@ -114,7 +114,7 @@
         <?= $this->form->select('useCustomColors', array('yes', 'no'), $values, $errors) ?>
     </fieldset>
         
-    <?php if ($this->configModel->get('useCustomColors', 'no') == 'yes') : ?>
+    <?php if ($this->task->configModel->get('useCustomColors', 'no') == 'yes') : ?>
         
         <form class="url-links" method="post" action="<?= $this->url->href('CustomizerConfigController', 'save', array('plugin' => 'customizer', 'redirect' => 'application')) ?>" autocomplete="off">
     <?= $this->form->csrf() ?>
