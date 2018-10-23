@@ -24,12 +24,12 @@ class Plugin extends Base
 	    
 	    if ($this->configModel->get('useCustomColors', 'yes') == 'yes') {
 		    $customizer['backColor'] = $this->configModel->get('loginbackground_color', '');
-		    $customizer['backColor_b'] = $this->configModel->get('loginpanel_color', '');
-		    $customizer['mainFontColor'] = $this->configModel->get('loginpanel_color', '');
-		    $customizer['alert'] = $this->configModel->get('loginpanel_color', '');
-		    $customizer['fontColor'] = $this->configModel->get('loginpanel_color', '');
-		    $customizer['headerFontColor'] = $this->configModel->get('loginpanel_color', '');
-		    $customizer['color_a'] = $this->configModel->get('loginpanel_color', '');
+		    $customizer['backColor_b'] = $this->configModel->get('backColor_b', '');
+		    $customizer['mainFontColor'] = $this->configModel->get('mainFontColor', '');
+		    $customizer['alert'] = $this->configModel->get('alert', '');
+		    $customizer['fontColor'] = $this->configModel->get('fontColor', '');
+		    $customizer['headerFontColor'] = $this->configModel->get('headerFontColor', '');
+		    $customizer['color_a'] = $this->configModel->get('color_a', '');
 		    $this->template->hook->attach('template:layout:head', 'customizer:layout/css');
 	    }
         
