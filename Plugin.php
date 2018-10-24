@@ -23,8 +23,9 @@ class Plugin extends Base
 	$customizer['loginpanel_color'] = $this->configModel->get('loginpanel_color', '#ffffff');
 	    
 	    if ($this->configModel->get('useCustomColors', '') == '0') {
-		    $customizer['backColor'] = $this->configModel->get('loginbackground_color', '');
+		    $customizer['backColor_a'] = $this->configModel->get('backColor_a', '');
 		    $customizer['backColor_b'] = $this->configModel->get('backColor_b', '');
+		    $customizer['backColor_c'] = $this->configModel->get('backColor_c', '');
 		    $customizer['mainFontColor'] = $this->configModel->get('mainFontColor', '');
 		    $customizer['alert'] = $this->configModel->get('alert', '');
 		    $customizer['fontColor'] = $this->configModel->get('fontColor', '');
