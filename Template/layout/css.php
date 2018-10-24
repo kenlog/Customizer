@@ -34,7 +34,6 @@ a .fa {
 	color:<?= $customizer['fontColor'] ?>;
 	}
 h1,h2,h3 {
-	background-color:<?= $customizer['backColor_c'] ?>;
 	color:<?= $customizer['headerFontColor'] ?>;
 	}
 table th a {
