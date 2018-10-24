@@ -112,6 +112,7 @@
         <p class="form-help background-img-link-desc"><?= e('Example: <code>50</code> (Default is 50px in height)') ?></p>
         <?= $this->form->label(t('Use Custom Colors'), 'useCustomColors') ?>
         <?= $this->form->select('useCustomColors', array('yes', 'no'), $values, $errors) ?>  
+    <?php if ($this->task->configModel->get('useCustomColors', '') == 0) : ?>
         <?= $this->form->label(t('Main Background Color'), 'loginbackground_color') ?>
         <input type="color" name="loginbackground_color" value="<?= $this->task->configModel->get('loginbackground_color','#ffffff') ?>">
         <?= $this->form->label(t('Secondary Page Background Color'), 'backColor_b') ?>
@@ -126,6 +127,7 @@
         <input type="color" name="fontColor" value="<?= $this->task->configModel->get('fontColor','') ?>">
         <?= $this->form->label(t('Notice Color'), 'alert') ?>
         <input type="color" name="alert" value="<?= $this->task->configModel->get('alert','') ?>">
+    <?php endif ?>
     </fieldset>
 
     <div class="form-actions">
