@@ -113,10 +113,12 @@
         <?= $this->form->label(t('Use Custom Colors'), 'useCustomColors') ?>
         <?= $this->form->select('useCustomColors', array('yes', 'no'), $values, $errors) ?>  
     <?php if ($this->task->configModel->get('useCustomColors', '') == 0) : ?>
-        <?= $this->form->label(t('Main Background Color'), 'loginbackground_color') ?>
-        <input type="color" name="loginbackground_color" value="<?= $this->task->configModel->get('loginbackground_color','#ffffff') ?>">
+        <?= $this->form->label(t('Main Background Color'), 'backColor_a') ?>
+        <input type="color" name="backColor_a" value="<?= $this->task->configModel->get('backColor_a','') ?>">
         <?= $this->form->label(t('Secondary Page Background Color'), 'backColor_b') ?>
         <input type="color" name="backColor_b" value="<?= $this->task->configModel->get('backColor_b','') ?>">
+        <?= $this->form->label(t('Main Background Color'), 'backColor_c') ?>
+        <input type="color" name="backColor_c" value="<?= $this->task->configModel->get('backColor_c','') ?>">
         <?= $this->form->label(t('Tertiary Background Color'), 'color_a') ?>
         <input type="color" name="color_a" value="<?= $this->task->configModel->get('color_a','') ?>">
         <?= $this->form->label(t('Header Font Color'), 'headerFontColor') ?>
