@@ -1,7 +1,8 @@
 <?php
 /*
- backColor
+ backColor_a
  backColor_b
+ backColor_c
  mainFontColor
  alert
  fontColor
@@ -15,7 +16,7 @@ global $customizer;
 <style>
 body {
 	color:<?= $customizer['fontColor'] ?>;
-	background-color: <?= $customizer['backColor'] ?>;
+	background-color: <?= $customizer['backColor_a'] ?>;
 	}
 .select-dropdown-input-container {
     background-color: <?= $customizer['backColor_b'] ?>!important;
@@ -47,6 +48,17 @@ table th a {
 .ui-widget-content {
     color: <?= $customizer['mainFontColor'] ?>;
 	}
+.table-list-header {
+	background-color:<?= $customizer['backColor_c'] ?>;
+	border: 1px solid <?= $customizer['backColor_c'] ?>;
+	}
+.table-list-row:nth-child(odd) {
+	background-color:<?= $customizer['backColor_c'] ?>;
+	}
+.table-list-row {
+    border-bottom: 1px solid <?= $customizer['backColor_c'] ?>;
+    border-right: 1px solid <?= $customizer['backColor_c'] ?>;
+}
 .table-list-header a {
 	color:<?= $customizer['fontColor'] ?>;
 	}
@@ -66,28 +78,28 @@ input[type="number"],input[type="date"],input[type="email"],input[type="password
 	background-color: <?= $customizer['backColor_b'] ?>;
 	}
 input[type="number"]::-webkit-input-placeholder,input[type="date"]::-webkit-input-placeholder,input[type="email"]::-webkit-input-placeholder,input[type="password"]::-webkit-input-placeholder,input[type="text"]:not(.input-addon-field)::-webkit-input-placeholder {
-	color:<?= $customizer['backColor'] ?>;
+	color:<?= $customizer['backColor_a'] ?>;
 	}
 input[type="number"]::-moz-placeholder,input[type="date"]::-moz-placeholder,input[type="email"]::-moz-placeholder,input[type="password"]::-moz-placeholder,input[type="text"]:not(.input-addon-field)::-moz-placeholder {
-	color:<?= $customizer['backColor'] ?>;
+	color:<?= $customizer['backColor_a'] ?>;
 	}
 input[type="number"]:-ms-input-placeholder,input[type="date"]:-ms-input-placeholder,input[type="email"]:-ms-input-placeholder,input[type="password"]:-ms-input-placeholder,input[type="text"]:not(.input-addon-field):-ms-input-placeholder {
-	color:<?= $customizer['backColor'] ?>;
+	color:<?= $customizer['backColor_a'] ?>;
 	}
 input[type="number"]:focus,input[type="date"]:focus,input[type="email"]:focus,input[type="password"]:focus,input[type="text"]:focus {
 	color:<?= $customizer['fontColor'] ?>;
 	}
 textarea {
-	background-color: <?= $customizer['backColor_b'] ?>;
+	background-color: <?= $customizer['backColor_a'] ?>;
 	}
 textarea::-webkit-input-placeholder {
-	color:<?= $customizer['backColor'] ?>;
+	color:<?= $customizer['backColor_a'] ?>;
 	}
 textarea::-moz-placeholder {
-	color:<?= $customizer['backColor'] ?>;
+	color:<?= $customizer['backColor_a'] ?>;
 	}
 textarea:-ms-input-placeholder {
-	color:<?= $customizer['backColor'] ?>;
+	color:<?= $customizer['backColor_a'] ?>;
 	}
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     background-color: <?= $customizer['color_a'] ?>;
@@ -171,6 +183,9 @@ a i.web-notification-icon {
 .sidebar>ul a {
 	color:<?= $customizer['fontColor'] ?>;
 	}
+.sidebar>ul li {
+	border-bottom: 1px dotted <?= $customizer['backColor_c'] ?>;
+	}
 .sidebar>ul a:hover {
 	color:<?= $customizer['fontColor'] ?>;
 	}
@@ -190,7 +205,7 @@ a i.web-notification-icon {
 	color:<?= $customizer['fontColor'] ?>;
 	}
 td.board-column-task-collapsed {
-	background-color:<?= $customizer['backColor'] ?>;
+	background-color:<?= $customizer['backColor_a'] ?>;
 	}
 .board-add-icon i {
 	color:<?= $customizer['mainFontColor'] ?>;
