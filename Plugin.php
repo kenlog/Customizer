@@ -22,7 +22,7 @@ class Plugin extends Base
 	$customizer['logoSize'] = $this->configModel->get('loginlogo_size', '50');
 	$customizer['loginpanel_color'] = $this->configModel->get('loginpanel_color', '#ffffff');
 	    
-	    if ($this->configModel->get('useCustomColors', 'yes') == 'yes') {
+	    if ($this->configModel->get('useCustomColors', '') == '0') {
 		    $customizer['backColor'] = $this->configModel->get('loginbackground_color', '');
 		    $customizer['backColor_b'] = $this->configModel->get('backColor_b', '');
 		    $customizer['mainFontColor'] = $this->configModel->get('mainFontColor', '');
